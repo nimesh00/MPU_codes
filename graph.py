@@ -42,33 +42,17 @@ def generate_graph(ac, gs):
 	plt.ylabel("ACCEL-X")
 
 	plt.subplot(212)
-	plt.plot(t, ay)
-	plt.ylabel("ACCEL-Y")
-	
-	plt.subplot(213)
 	plt.plot(t, az)
 	plt.ylabel("ACCEL-Z")
 	
-	plt.figure(2)
-	
-	plt.subplot(221)
-	plt.plot(t, gx)
-	plt.ylabel("GYRO-X")
-
-	plt.subplot(222)
-	plt.plot(t, gy)
-	plt.ylabel("GYRO-Y")
-	
-	plt.subplot(213)
-	plt.plot(t, gz)
-	plt.ylabel("GYRO-Z")
 	
 	plt.show()
-	plt.pause(0.01)
+	plt.pause(2)
 
 def main():
 	while 1:
 		accel, gyro = read_data()
 		generate_graph(accel, gyro)
+	
 if __name__=="__main__":
 	main()
